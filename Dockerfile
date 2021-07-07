@@ -29,6 +29,7 @@ RUN apk --update upgrade && \
     apk add --update ca-certificates && \
     update-ca-certificates
 WORKDIR "/app/"
+RUN mkdir "/app/logs"
 COPY --from=build "/go/bin/iamlive" ./iamlive
 RUN addgroup -S "appgroup" && adduser -S "appuser" -G "appgroup" && \
     chown -R "appuser:appgroup" .

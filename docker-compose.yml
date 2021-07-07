@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  iamlive:
+    build:
+      context: .
+      network: host
+    ports:
+      - "80:10080"
+      - "443:10080"
+    restart: always
+    command: --mode proxy --bind-addr 0.0.0.0:10080 --output-file "/app/iamlive.log" --sort-alphabetical
+    network_mode: "bridge"
