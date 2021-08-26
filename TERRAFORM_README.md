@@ -8,3 +8,9 @@ export HTTP_PROXY=http://127.0.0.1:80 && export HTTPS_PROXY=http://127.0.0.1:443
 
 # Unset Proxy
 unset HTTP_PROXY HTTPS_PROXY AWS_CA_BUNDLE
+
+# Terraform example
+terraform plan -target='module.my' -var-file="my.tfvars" -lock=false
+
+# Don't forget init first !
+
